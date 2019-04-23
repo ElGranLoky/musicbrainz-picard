@@ -25,6 +25,8 @@ Run the container:
 ## Volumen
 All files in the container or application are configured to be saved in the path /config
 
+To make the music accessible from inside the container, you can create another volume with the files to be process persistently. For example `-v /music=/config/home/Music`
+
 ### Example RUN
 
-docker run -e USER_ID=1000 -e GROUP_ID=1000 -e TAKE_CONFIG_OWNERSHIP=1 -e CLEAN_TMP_DIR=1 -e SECURE_CONNECTION=1 -p 5800:5800 -v ./config=/config elgranloky/musicbrainz-picard
+docker run -e USER_ID=1000 -e GROUP_ID=1000 -e TAKE_CONFIG_OWNERSHIP=1 -e CLEAN_TMP_DIR=1 -e SECURE_CONNECTION=1 -p 5800:5800 -v ./config=/config -v /music=/config/home/Music elgranloky/musicbrainz-picard
