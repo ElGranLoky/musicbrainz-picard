@@ -8,9 +8,9 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     add-apt-repository ppa:musicbrainz-developers/stable
 
-# Install musicbrainz
+# Install musicbrainz & fpcalc (provided by Chromaprint) 
 RUN apt-get update && \
-    apt-get -y --no-install-recommends install picard && \
+    apt-get -y --no-install-recommends install picard libchromaprint-tools && \
     rm -rf /var/lib/apt/lists/*
 
 # Locale
